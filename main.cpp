@@ -100,15 +100,14 @@ int main() {
             if (loginname.size() != 0) {
                 cout << "Geben Sie die ID des Spiels an:" << endl;
                 cin >> gameid;
-                for (Game game : shop.getGames()) {  // Verwende Referenzen, um Änderungen vorzunehmen
+                for (Game& game : shop.getGames()) {  // Verwende Referenzen, um Änderungen vorzunehmen
                     if (gameid == game.getId()) {
                         price = game.getPrice();
                         cout << "Der Preis betraegt " << price << endl;
                         if (shop.user(loginname).getCredit() < price) {
                             cout << "Leider hast du zu wenig Geld, um das Spiel zu kaufen. Du hast nur noch: " << shop.user(loginname).getCredit() << endl;
                         } else {
-                            cout << "_____ id -> " << game.getId() << endl;
-                            shop.user(loginname).addGame(game);  // Spiel wird dem Benutzer hinzugefügt
+                            shop.user(loginname).addGame(&game);  // Spiel wird dem Benutzer hinzugefügt
                             shop.user(loginname).removeCredit(price);  // Abzug der Credits
                             cout << "Du hast das Spiel erfolgreich gekauft. Du hast nun nur noch " << shop.user(loginname).getCredit() << " Credits verfuegbar." << endl;
                         }

@@ -19,7 +19,7 @@ public:
     bool login(std::string username, std::string password);
     User& user(std::string username);
     std::vector<User> getUsers();
-    std::vector<Game> getGames();
+    std::vector<Game>& getGames();
 };
 
 #endif //GOODCURRENTGAMES_H

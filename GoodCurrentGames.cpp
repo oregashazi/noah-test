@@ -46,7 +46,7 @@ std::vector<User> GoodCurrentGames::getUsers() {
     return users;
 }
 
-std::vector<Game> GoodCurrentGames::getGames() {
+std::vector<Game>& GoodCurrentGames::getGames() {
     return games;
 }
 

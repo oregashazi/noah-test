@@ -3,6 +3,9 @@
 //
 
 #include "User.h"
+#include <iostream>
+
+using namespace std;
 
 User::User(std::string username, std::string password, int credit) : username(username), password(password), credit(credit) {}
 User::User(const User& other) : username(other.username), password(other.password), credit(other.credit) {}
@@ -22,12 +25,12 @@ void User::removeCredit(int credits) {
     credit -= credits;
 }
 
-bool User::addGame(Game game) {
-    boughtGames.push_back(&game);
+bool User::addGame(Game* game) {
+    boughtGames.push_back(game);
     return true;
 }
 
-std::vector<Game *> User::getGames() const {
+std::vector<Game*> User::getGames() const {
     return boughtGames;
 }
 
