@@ -27,4 +27,5 @@ private:
     std::vector<Game*> getGames() const;
 };
 
+
 #endif //USER_H
