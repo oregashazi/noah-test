@@ -23,7 +23,7 @@ private:
     std::string getPassword() const;
     int getCredit() const;
     void removeCredit(int credits);
-    bool addGame(Game* game);
+    bool addGame(Game game);
     std::vector<Game*> getGames() const;
 };
 

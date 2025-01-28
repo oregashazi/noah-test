@@ -22,8 +22,8 @@ void User::removeCredit(int credits) {
     credit -= credits;
 }
 
-bool User::addGame(Game *game) {
-    boughtGames.push_back(game);
+bool User::addGame(Game game) {
+    boughtGames.push_back(&game);
     return true;
 }
 

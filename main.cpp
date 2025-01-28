@@ -108,7 +108,7 @@ int main() {
                             cout << "Leider hast du zu wenig Geld, um das Spiel zu kaufen. Du hast nur noch: " << shop.user(loginname).getCredit() << endl;
                         } else {
                             cout << "_____ id -> " << game.getId() << endl;
-                            shop.user(loginname).addGame(&game);  // Spiel wird dem Benutzer hinzugefügt
+                            shop.user(loginname).addGame(game);  // Spiel wird dem Benutzer hinzugefügt
                             shop.user(loginname).removeCredit(price);  // Abzug der Credits
                             cout << "Du hast das Spiel erfolgreich gekauft. Du hast nun nur noch " << shop.user(loginname).getCredit() << " Credits verfuegbar." << endl;
                         }
