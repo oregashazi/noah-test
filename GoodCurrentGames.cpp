@@ -3,14 +3,19 @@
 //
 
 #include "GoodCurrentGames.h"
-#include "Game.h"
 
+#include <iostream>
+#include <ostream>
+
+#include "Game.h"
+using namespace std;
 bool GoodCurrentGames::addGame(const Game& game) {
     for (auto& element : games) {
         if (element.getId() == game.getId()) {
             return false;
         }
     }
+
     games.push_back(game);
     return true;
 }
@@ -43,4 +48,12 @@ std::vector<User> GoodCurrentGames::getUsers() {
 
 std::vector<Game> GoodCurrentGames::getGames() {
     return games;
+}
+
+User& GoodCurrentGames::user(std::string username) {
+    for (auto& user : users) {
+        if (user.getUsername() == username) {
+            return user;
+        }
+    }
 }

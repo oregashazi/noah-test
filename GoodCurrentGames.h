@@ -17,6 +17,7 @@ public:
     bool addGame(const Game& game);
     bool addUser(const User& user);
     bool login(std::string username, std::string password);
+    User& user(std::string username);
     std::vector<User> getUsers();
     std::vector<Game> getGames();
 };

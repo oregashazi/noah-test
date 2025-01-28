@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
-project(uebung2020911)
+project(noah-git)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(uebung2020911 main.cpp
+add_executable(noah-git main.cpp
         User.cpp
         User.h
         Game.cpp
